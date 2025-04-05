@@ -1,0 +1,92 @@
+.nav-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color);
+  padding: 0.75rem 2rem; /* More balanced padding */
+  color: var(--text-color);
+  height: 4.5rem; /* Slightly increased for better spacing */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft bottom shadow */
+}
+
+/* Brand Logo */
+.nav-brand {
+  height: 3.5rem;
+}
+
+.logo-img {
+  height: 7rem;
+  width: auto;
+  margin-top: -25px; /* Adjust positioning */
+  filter: drop-shadow(
+    3px 3px 8px rgba(114, 212, 147, 0.6)
+  ); /* Stronger shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 2.5rem; /* More spacing between links */
+  padding-right: 3rem;
+}
+
+.nav-item {
+  color: var(--text-color) !important;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  position: relative;
+  padding: 0.5rem 1rem; /* Add padding for background effect */
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+.nav-item:hover {
+  background-color: rgba(146, 250, 201, 0.2); /* Light transparent background */
+  color: var(--link-hover) !important;
+  transform: translateY(-2px);
+}
+
+/* Underline Effect on Hover */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-hover);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Exit Links */
+.nav-exit {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exit-link {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.exit-link:hover,
+.github-link:hover {
+  color: var(--link-hover);
+  transform: scale(1.1);
+}
